@@ -1,0 +1,27 @@
+# To help make the game feel more interactive, we need to implement sound elements to the game.
+
+# setting our variables
+local closesound = script.Closedoor # this is a sound that I had put inside of the script
+local model = script.Parent
+local door = model.Door
+local prompt = script.Parent.Part.Attachment.ProximityPrompt
+
+local debounce = false
+local debounce2 = false
+
+# matching the wait times with the door script. Sound plays when prompt is triggered.
+prompt.Triggered:Connect(function()
+	if debounce == false then
+		debounce = true
+		closesound:Play()
+		wait(3.533)
+		wait(1.5)
+		debounce2 = true
+	elseif debounce == true and debounce2 == true then
+		debounce2 = false
+		closesound:Play()
+		wait(3.533)
+		wait(1.5)
+		debounce = false
+	end
+end)
