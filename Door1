@@ -1,0 +1,37 @@
+local TweenService = game:GetService("TweenService") # this is a service used to help smoothly animate the movement of the door
+
+# get our variables
+local model = script.Parent
+local door = model.Door
+local prompt = script.Parent.Part.Attachment.ProximityPrompt
+
+# this acts as the speed of the animation. If the tweeninfo is 1.7 then it would take 1.7 seconds for the door to open/close
+local tweenInfo = TweenInfo.new(1.7)
+
+# we create these two variables as to keep the door as a reference for where the door moves.
+local dooropen = {}
+local doorclose = {}
+
+# By multiplying the y cordinate of the door by the doors position, we can effectively make the door move upwards.
+dooropen.CFrame = door.CFrame * CFrame.new(0, door.Size.Y, 0)
+doorclose.CFrame = door.CFrame
+
+# here we create the animation. door is the thing we are moving, tweeninfo is the speed, and dooropen is the position we want it to be in
+local DoorTweenOpen = TweenService:Create(door, tweenInfo, dooropen)
+local DoorTweenClose = TweenService:Create(door, tweenInfo, doorclose) 
+
+# if the prompt (the button needed to be pressed) is triggered, then run this code.
+prompt.Triggered:Connect(function()
+	if prompt.ActionText == "Close" then
+		DoorTweenClose:Play()
+		wait(3.533)
+		wait(1.5)
+		prompt.ActionText = "Open"
+		
+	else
+		DoorTweenOpen:Play()
+		wait(3.533)
+		wait(1.5)
+		prompt.ActionText = "Close"
+	end
+end)
