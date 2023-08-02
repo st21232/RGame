@@ -1,1 +1,31 @@
+# this is the script used for the camera positions within the game. It will be updated regularly
+local player = game.Players.LocalPlayer
+local camera = workspace.CurrentCamera
 
+player.CharacterAdded:Wait()
+player.Character:WaitForChild("HumanoidRootPart")
+
+camera.CameraSubject = game.Workspace.Pos1
+camera.CameraType = Enum.CameraType.Attach
+camera.FieldOfView = 100
+
+camera.CFrame = CFrame.new(game.Workspace.Pos1.Position)
+camera.CFrame = camera.CFrame * CFrame.Angles(0, math.rad(-90), 0)
+camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-40), 0, 0)
+
+for i, v in pairs(game.Workspace.Areas:GetChildren()) do
+	if v:IsA("Part") then
+		v.Touched:Connect(function(plr)
+			if v.Name == "Area1" then
+				camera.FieldOfView = 85
+				camera.CFrame = CFrame.new(v.part.Position)
+				camera.CFrame = camera.CFrame * CFrame.Angles(0, 0, 0)
+				camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), 0, 0)
+				print(plr)
+			elseif v.Name == "Area2" then
+				camera.CFrame = CFrame.new(v.part.Position)
+				camera.CFrame = camera.CFrame * CFrame.Angles(0, math.rad(45), 0)
+			end
+		end)
+	end
+end
