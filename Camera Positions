@@ -1,6 +1,8 @@
-# this is the script used for the camera positions within the game. It will be updated regularly
+--this is the script used for the camera positions within the game. It will be updated regularly
 local player = game.Players.LocalPlayer
 local camera = workspace.CurrentCamera
+local MirBut = game.Workspace.MirrorTele.Attachment.ProximityPrompt
+
 
 player.CharacterAdded:Wait()
 player.Character:WaitForChild("HumanoidRootPart")
@@ -25,7 +27,19 @@ for i, v in pairs(game.Workspace.Areas:GetChildren()) do
 			elseif v.Name == "Area2" then
 				camera.CFrame = CFrame.new(v.part.Position)
 				camera.CFrame = camera.CFrame * CFrame.Angles(0, math.rad(45), 0)
+			elseif v.Name == "Area3" then
+				camera.FieldOfView = 85
+				camera.CFrame = CFrame.new(v.part.Position)
+				camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(45), 0)
+				camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-25), math.rad(0), 0)
 			end
 		end)
 	end
+end
+
+if MirBut.Triggered then
+	MirBut.Enabled = false
+	camera.FieldOfView = 125
+	camera.CFrame = CFrame.new(game.Workspace.Areas.Special1.Position)
+	camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-90), math.rad(0), 0)
 end
