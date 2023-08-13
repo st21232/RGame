@@ -1,49 +1,64 @@
 -- backbone version of the script
 local first = 45
 local second = -90
-local third = 180
-local fourth = 90
-
+local third = -135
+local fourth = 135
+local fifth = 90
 
 local p1 = script.Parent.p1
 local p2 = script.Parent.p2
 local p3 = script.Parent.p3
 local p4 = script.Parent.p4
+local p5 = script.Parent.p5
 
 
-local particle1 = script.Parent.Particles.Particle1.Attachment.ParticleEmitter
-local particle2 = script.Parent.Particles.Particle2.Attachment.ParticleEmitter
-local particle3 = script.Parent.Particles.Particle3.Attachment.ParticleEmitter
-local particle4 = script.Parent.Particles.Particle4.Attachment.ParticleEmitter
-local particle0 = script.Parent.Particles.Particle0.Attachment.ParticleEmitter
+local particle1 = script.Parent.Particles.Particle1
+local particle2 = script.Parent.Particles.Particle2
+local particle3 = script.Parent.Particles.Particle3
+local particle4 = script.Parent.Particles.Particle4
+local particle5 = script.Parent.Particles.Particle5
+local particle0 = script.Parent.Particles.Particle0
 
 
 
 script.Parent.Start.ClickDetector.MouseClick:Connect(function()-- function checks if the orientation of the mirrors are correct and shoots out the particle
-	particle0:Emit(15)
+	particle0.Attachment.ParticleEmitter:Emit(15)
 	wait(1)
 	particle1.Orientation = p1.Orientation
-	particle1:Emit(15)
+	particle1.Attachment.ParticleEmitter:Emit(15)
 	wait(1)
 	if p1.Orientation == Vector3.new(0, first, 0) then
 		particle2.Orientation = p2.Orientation
-		particle2:Emit(15)
+		particle2.Attachment.ParticleEmitter:Emit(15)
 		wait(1)
 		if p2.Orientation == Vector3.new(0, second, 0) then
 			particle3.Orientation = p3.Orientation
-			particle3:Emit(15)
+			particle3.Attachment.ParticleEmitter:Emit(15)
 			wait(1)
 			if p3.Orientation == Vector3.new(0, third, 0) then
 				particle4.Orientation = p4.Orientation
-				particle4:Emit(15)
+				particle4.Attachment.ParticleEmitter:Emit(15)
 				wait(1)
 				if p4.Orientation == Vector3.new(0, fourth, 0) then
-					script.Parent.TouchBlock.BrickColor = BrickColor.new("Sea green")
+					particle5.Orientation = p5.Orientation
+					particle5.Attachment.ParticleEmitter:Emit(15)
+					wait(1)
+					if p5.Orientation == Vector3.new(0, fifth, 0) then
+						script.Parent.TouchBlock.BrickColor = BrickColor.new("Sea green")
+					else
+						p1.Orientation = p1.Orientation * Vector3.new(0, 0, 0) -- reseting the orientation
+						p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
+						p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
+						p4.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
+						p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
+						print("Error Wrong oreintation")
+					end
 				else
 					p1.Orientation = p1.Orientation * Vector3.new(0, 0, 0) -- reseting the orientation
 					p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 					p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 					p4.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
+					p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 					print("Error Wrong oreintation")
 				end
 			else 
@@ -51,6 +66,7 @@ script.Parent.Start.ClickDetector.MouseClick:Connect(function()-- function check
 				p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 				p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 				p4.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
+				p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 				print("Error Wrong oreintation")
 			end
 		else 
@@ -58,6 +74,7 @@ script.Parent.Start.ClickDetector.MouseClick:Connect(function()-- function check
 			p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 			p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 			p4.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
+			p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 			print("Error Wrong oreintation")
 		end
 	else 
@@ -65,9 +82,11 @@ script.Parent.Start.ClickDetector.MouseClick:Connect(function()-- function check
 		p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 		p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 		p4.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
+		p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 		print("Error Wrong oreintation")
 	end
 end)
+
 
 
 
