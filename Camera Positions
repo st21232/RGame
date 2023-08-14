@@ -32,14 +32,25 @@ for i, v in pairs(game.Workspace.Areas:GetChildren()) do
 				camera.CFrame = CFrame.new(v.part.Position)
 				camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(45), 0)
 				camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-25), math.rad(0), 0)
+				print(plr)
 			end
 		end)
 	end
 end
 
-if MirBut.Triggered then
+MirBut.Triggered:Connect(function(plr) -- make the button appear when entering the mirror system
+	local button = plr.PlayerGui.ScreenGui.TextButton
+	button.BackgroundTransparency = 0
+	button.TextTransparency = 0
+	button.Active = true
 	MirBut.Enabled = false
-	camera.FieldOfView = 125
+	camera.FieldOfView = 90
 	camera.CFrame = CFrame.new(game.Workspace.Areas.Special1.Position)
 	camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-90), math.rad(0), 0)
-end
+end)
+
+local button = player.PlayerGui.ScreenGui.TextButton -- makes the mirror button functional
+button.MouseButton1Click:Connect(function()
+	game.ReplicatedStorage.MirrorButton:FireServer()
+end)
+
