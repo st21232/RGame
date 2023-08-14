@@ -21,7 +21,7 @@ local particle0 = script.Parent.Particles.Particle0
 
 
 
-script.Parent.Start.ClickDetector.MouseClick:Connect(function()-- function checks if the orientation of the mirrors are correct and shoots out the particle
+game.ReplicatedStorage.MirrorButton.OnServerEvent:Connect(function()-- function checks if the orientation of the mirrors are correct and shoots out the particle
 	particle0.Attachment.ParticleEmitter:Emit(15)
 	wait(1)
 	particle1.Orientation = p1.Orientation
