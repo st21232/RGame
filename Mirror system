@@ -1,4 +1,5 @@
 -- backbone version of the script
+
 local first = 45
 local second = -90
 local third = -135
@@ -19,10 +20,17 @@ local particle4 = script.Parent.Particles.Particle4
 local particle5 = script.Parent.Particles.Particle5
 local particle0 = script.Parent.Particles.Particle0
 
-
+local debounce = false -- cooldown / start stop system
 
 game.ReplicatedStorage.MirrorButton.OnServerEvent:Connect(function()-- function checks if the orientation of the mirrors are correct and shoots out the particle
-	particle0.Attachment.ParticleEmitter:Emit(15)
+	if debounce == false then
+	debounce = true
+	p1.ClickDetector.MaxActivationDistance = 0 -- disabling the rotation
+	p2.ClickDetector.MaxActivationDistance = 0
+	p3.ClickDetector.MaxActivationDistance = 0
+	p4.ClickDetector.MaxActivationDistance = 0
+	p5.ClickDetector.MaxActivationDistance = 0
+	particle0.Attachment.ParticleEmitter:Emit(15) 
 	wait(1)
 	particle1.Orientation = p1.Orientation
 	particle1.Attachment.ParticleEmitter:Emit(15)
@@ -45,7 +53,13 @@ game.ReplicatedStorage.MirrorButton.OnServerEvent:Connect(function()-- function 
 					wait(1)
 					if p5.Orientation == Vector3.new(0, fifth, 0) then
 						script.Parent.TouchBlock.BrickColor = BrickColor.new("Sea green")
-					else
+						else
+						debounce = false
+						p1.ClickDetector.MaxActivationDistance = 1000 -- reenabling the rotation
+						p2.ClickDetector.MaxActivationDistance = 1000
+						p3.ClickDetector.MaxActivationDistance = 1000
+						p4.ClickDetector.MaxActivationDistance = 1000
+						p5.ClickDetector.MaxActivationDistance = 1000
 						p1.Orientation = p1.Orientation * Vector3.new(0, 0, 0) -- reseting the orientation
 						p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 						p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
@@ -53,7 +67,13 @@ game.ReplicatedStorage.MirrorButton.OnServerEvent:Connect(function()-- function 
 						p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 						print("Error Wrong oreintation")
 					end
-				else
+					else
+					debounce = false
+					p1.ClickDetector.MaxActivationDistance = 1000 -- reenabling the rotation
+					p2.ClickDetector.MaxActivationDistance = 1000
+					p3.ClickDetector.MaxActivationDistance = 1000
+					p4.ClickDetector.MaxActivationDistance = 1000
+					p5.ClickDetector.MaxActivationDistance = 1000
 					p1.Orientation = p1.Orientation * Vector3.new(0, 0, 0) -- reseting the orientation
 					p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 					p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
@@ -61,7 +81,13 @@ game.ReplicatedStorage.MirrorButton.OnServerEvent:Connect(function()-- function 
 					p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 					print("Error Wrong oreintation")
 				end
-			else 
+				else 
+				debounce = false
+				p1.ClickDetector.MaxActivationDistance = 1000 -- reenabling the rotation
+				p2.ClickDetector.MaxActivationDistance = 1000
+				p3.ClickDetector.MaxActivationDistance = 1000
+				p4.ClickDetector.MaxActivationDistance = 1000
+				p5.ClickDetector.MaxActivationDistance = 1000
 				p1.Orientation = p1.Orientation * Vector3.new(0, 0, 0) 
 				p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 				p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
@@ -69,7 +95,13 @@ game.ReplicatedStorage.MirrorButton.OnServerEvent:Connect(function()-- function 
 				p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 				print("Error Wrong oreintation")
 			end
-		else 
+			else 
+			debounce = false
+			p1.ClickDetector.MaxActivationDistance = 1000 -- reenabling the rotation
+			p2.ClickDetector.MaxActivationDistance = 1000
+			p3.ClickDetector.MaxActivationDistance = 1000
+			p4.ClickDetector.MaxActivationDistance = 1000
+			p5.ClickDetector.MaxActivationDistance = 1000
 			p1.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 			p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 			p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
@@ -77,15 +109,24 @@ game.ReplicatedStorage.MirrorButton.OnServerEvent:Connect(function()-- function 
 			p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 			print("Error Wrong oreintation")
 		end
-	else 
+		else 
+		debounce = false
+		p1.ClickDetector.MaxActivationDistance = 1000 -- reenabling the rotation
+		p2.ClickDetector.MaxActivationDistance = 1000
+		p3.ClickDetector.MaxActivationDistance = 1000
+		p4.ClickDetector.MaxActivationDistance = 1000
+		p5.ClickDetector.MaxActivationDistance = 1000
 		p1.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 		p2.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 		p3.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 		p4.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 		p5.Orientation = p1.Orientation * Vector3.new(0, 0, 0)
 		print("Error Wrong oreintation")
+		end
 	end
 end)
+
+
 
 
 
