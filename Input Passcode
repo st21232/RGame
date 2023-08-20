@@ -1,1 +1,156 @@
+wait(2) -- allowing for everything to load in before running the script
+local code = 4405 -- the passcode for the door
 
+
+
+game.Workspace.button.Attachment.ProximityPrompt.Triggered:Connect(function() -- when the player activated the proximity prompt by pressing 'e', it should run this function which reactivates the button on the GUI and makes it visible
+	print(1)
+	for i, v in pairs(game.Players.LocalPlayer.PlayerGui.ScreenGui:GetChildren()) do
+		if v:IsA("TextButton") then
+			print(2)
+			v.BackgroundTransparency = 0
+			v.TextTransparency = 0
+			v.Active = true
+		elseif v:IsA("TextLabel") then
+			v.BackgroundTransparency = 0
+			v.TextTransparency = 0
+		end
+	end
+end)
+local debounce = false -- to allow and stop the inputting of text
+local limit = 0 -- the variable we will be reffering to allow for the amount of text allowed
+
+script.Parent.b0.MouseButton1Click:Connect(function()
+	if limit == 4 then -- checks if limit hits '4' and if it did stops the input of the text
+		debounce = true
+	elseif limit < 4 then -- if its less, then continue
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1 -- adds on the limit.
+		script.Parent.Number.Text = script.Parent.Number.Text..'0' -- adds onto the string of the current line of text in the text label
+	end
+end)
+
+
+script.Parent.b1.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'1'
+	end
+end)
+
+
+script.Parent.b2.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'2'
+	end
+end)
+
+
+script.Parent.b3.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'3'
+	end
+end)
+
+
+script.Parent.b4.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'4'
+	end
+end)
+
+
+script.Parent.b5.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'5'
+	end
+end)
+
+
+script.Parent.b6.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'6'
+	end
+end)
+
+
+script.Parent.b7.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'7'
+	end
+end)
+
+
+script.Parent.b8.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'8'
+	end
+end)
+
+
+script.Parent.b9.MouseButton1Click:Connect(function()
+	if limit == 4 then
+		debounce = true
+	elseif limit < 4 then
+		debounce = false
+	end
+	if debounce == false then
+		limit = limit + 1
+		script.Parent.Number.Text = script.Parent.Number.Text..'9'
+	end
+end)
+
+
+script.Parent.Delete.MouseButton1Click:Connect(function() -- this function runs when the RESET button is pressed on the passcode GUI, when it runs it resets the limit back to 0 and makes the text blank.
+	script.Parent.Number.Text = ""
+	limit = 0
+end)
