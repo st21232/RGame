@@ -177,8 +177,9 @@ script.Parent.Enter.MouseButton1Click:Connect(function()
 			debounce2 = true
 			for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Passcode:GetChildren()) do
 				if v:IsA("TextButton") then
-					print(2)
+					print("DEACTER")
 					v.Active = false
+					script.Parent.Delete.Visible = false
 				end
 			end
 			script.Parent.Number.Text = "ERROR"
@@ -187,6 +188,7 @@ script.Parent.Enter.MouseButton1Click:Connect(function()
 				if v:IsA("TextButton") then
 					print(2)
 					v.Active = true
+					script.Parent.Delete.Visible = true
 				end
 			end
 			script.Parent.Number.Text = ""
