@@ -1,19 +1,22 @@
 wait(2) -- allowing for everything to load in before running the script
-local code = 4405 -- the passcode for the door
+local first = 4
+local second = first..4
+local third = second..0
+local code = third..5 -- creating the passcode like this prevents the number four thousand and five to be created and instead adds them together as individual numbers. Basically the digit does not go up
 
 
 
 game.Workspace.button.Attachment.ProximityPrompt.Triggered:Connect(function() -- when the player activated the proximity prompt by pressing 'e', it should run this function which reactivates the button on the GUI and makes it visible
 	print(1)
-	for i, v in pairs(game.Players.LocalPlayer.PlayerGui.ScreenGui:GetChildren()) do
+	for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Passcode:GetChildren()) do
 		if v:IsA("TextButton") then
 			print(2)
-			v.BackgroundTransparency = 0
-			v.TextTransparency = 0
+			v.Visible = true
 			v.Active = true
 		elseif v:IsA("TextLabel") then
-			v.BackgroundTransparency = 0
-			v.TextTransparency = 0
+			v.Visible = true
+		elseif v:IsA("ImageLabel") then
+			v.Visible = true
 		end
 	end
 end)
@@ -28,10 +31,9 @@ script.Parent.b0.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1 -- adds on the limit.
-		script.Parent.Number.Text = script.Parent.Number.Text..'0' -- adds onto the string of the current line of text in the text label
+		script.Parent.Number.Text = script.Parent.Number.Text..0 -- adds onto the string of the current line of text in the text label
 	end
 end)
-
 
 script.Parent.b1.MouseButton1Click:Connect(function()
 	if limit == 4 then
@@ -41,7 +43,7 @@ script.Parent.b1.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'1'
+		script.Parent.Number.Text = script.Parent.Number.Text..1
 	end
 end)
 
@@ -54,7 +56,7 @@ script.Parent.b2.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'2'
+		script.Parent.Number.Text = script.Parent.Number.Text..2
 	end
 end)
 
@@ -67,7 +69,7 @@ script.Parent.b3.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'3'
+		script.Parent.Number.Text = script.Parent.Number.Text..3
 	end
 end)
 
@@ -80,7 +82,7 @@ script.Parent.b4.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'4'
+		script.Parent.Number.Text = script.Parent.Number.Text..4
 	end
 end)
 
@@ -93,7 +95,7 @@ script.Parent.b5.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'5'
+		script.Parent.Number.Text = script.Parent.Number.Text..5
 	end
 end)
 
@@ -106,7 +108,7 @@ script.Parent.b6.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'6'
+		script.Parent.Number.Text = script.Parent.Number.Text..6
 	end
 end)
 
@@ -119,7 +121,7 @@ script.Parent.b7.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'7'
+		script.Parent.Number.Text = script.Parent.Number.Text..7
 	end
 end)
 
@@ -132,7 +134,7 @@ script.Parent.b8.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'8'
+		script.Parent.Number.Text = script.Parent.Number.Text..8
 	end
 end)
 
@@ -145,7 +147,7 @@ script.Parent.b9.MouseButton1Click:Connect(function()
 	end
 	if debounce == false then
 		limit = limit + 1
-		script.Parent.Number.Text = script.Parent.Number.Text..'9'
+		script.Parent.Number.Text = script.Parent.Number.Text..9
 	end
 end)
 
@@ -153,4 +155,30 @@ end)
 script.Parent.Delete.MouseButton1Click:Connect(function() -- this function runs when the RESET button is pressed on the passcode GUI, when it runs it resets the limit back to 0 and makes the text blank.
 	script.Parent.Number.Text = ""
 	limit = 0
+end)
+
+local debounce2 = false
+script.Parent.Enter.MouseButton1Click:Connect(function()
+	if debounce2 == false then
+		if script.Parent.Number.Text == code then
+			debounce2 = true
+			for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Passcode:GetChildren()) do
+				if v:IsA("TextButton") then
+					print(2)
+					v.Visible = false
+					v.Active = false
+				elseif v:IsA("TextLabel") then
+					v.Visible = false
+				elseif v:IsA("ImageLabel") then
+					v.Visible = false
+				end
+			end
+		elseif script.Parent.Number.Text ~= code then
+			debounce2 = true
+			script.Parent.Number.Text = "ERROR"
+			wait(2)
+			debounce2 = false
+			limit = 0
+		end
+	end
 end)
