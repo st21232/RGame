@@ -175,8 +175,21 @@ script.Parent.Enter.MouseButton1Click:Connect(function()
 			end
 		elseif script.Parent.Number.Text ~= code then
 			debounce2 = true
+			for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Passcode:GetChildren()) do
+				if v:IsA("TextButton") then
+					print(2)
+					v.Active = false
+				end
+			end
 			script.Parent.Number.Text = "ERROR"
 			wait(2)
+			for i, v in pairs(game.Players.LocalPlayer.PlayerGui.Passcode:GetChildren()) do
+				if v:IsA("TextButton") then
+					print(2)
+					v.Active = true
+				end
+			end
+			script.Parent.Number.Text = ""
 			debounce2 = false
 			limit = 0
 		end
