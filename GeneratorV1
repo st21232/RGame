@@ -1,0 +1,904 @@
+-- QUADSCRIPT
+local part = script.Parent.Parent.Parent
+
+-- Getting all the parts 
+local twopPart = script.Parent.Parent.Parent.Parent.twop.Middle
+local twop2Part = script.Parent.Parent.Parent.Parent.twop2.Middle
+local twop3Part = script.Parent.Parent.Parent.Parent.twop3.Middle
+local twop4Part = script.Parent.Parent.Parent.Parent.twop4.Middle
+local twop5Part = script.Parent.Parent.Parent.Parent.twop5.Middle
+local twop6Part = script.Parent.Parent.Parent.Parent.twop6.Middle
+local StraightPart = script.Parent.Parent.Parent.Parent.Straight.Middle
+local Straight2Part = script.Parent.Parent.Parent.Parent.Straight2.Middle
+local Straight3Part = script.Parent.Parent.Parent.Parent.Straight3.Middle
+local ThreePart = script.Parent.Parent.Parent.Parent.Three.Middle
+local QuadPart = script.Parent.Parent.Parent.Parent.Quad.Middle
+
+-- Getting all the correct angle of each part
+
+local twop3Correct = 150
+local twop4Correct = -30
+local straightCorrect = -30
+local straight2Correct = 90
+local straight3Correct = 15
+local QuadCorrect = -30
+
+script.Parent.MouseClick:Connect(function()
+	part:PivotTo(part:GetPivot() * CFrame.Angles(math.rad(60), math.rad(0), math.rad(0))) 
+	if QuadPart.Orientation.Y == QuadCorrect and Straight2Part.BrickColor == BrickColor.new("Yellow flip/flop") and Straight3Part.Orientation.Y == straight3Correct and twop4Part.Orientation.Y == twop4Correct and StraightPart.Orientation.Y == straightCorrect and twop3Part.Orientation.Y == twop3Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif QuadPart.Orientation.Y == QuadCorrect and Straight2Part.BrickColor == BrickColor.new("Yellow flip/flop") and Straight3Part.Orientation.Y == straight3Correct and twop4Part.Orientation.Y == twop4Correct and StraightPart.Orientation.Y == straightCorrect then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif QuadPart.Orientation.Y == QuadCorrect and Straight2Part.BrickColor == BrickColor.new("Yellow flip/flop") and Straight3Part.Orientation.Y == straight3Correct and twop4Part.Orientation.Y == twop4Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif QuadPart.Orientation.Y == QuadCorrect and Straight2Part.BrickColor == BrickColor.new("Yellow flip/flop") and Straight3Part.Orientation.Y == straight3Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif QuadPart.Orientation.Y == QuadCorrect and Straight2Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif QuadPart.Orientation.Y ~= QuadCorrect and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop3Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		twop3Part.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif QuadPart.Orientation.Y ~= QuadCorrect and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif QuadPart.Orientation.Y ~= QuadCorrect and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif QuadPart.Orientation.Y ~= QuadCorrect and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif QuadPart.Orientation.Y ~= QuadCorrect then -- disabling the colour on neighbouring objects when disconnecting
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	end
+end)
+
+-- STRAIGHTSCRIPT
+local part = script.Parent.Parent.Parent
+
+-- Getting all the parts 
+local twopPart = script.Parent.Parent.Parent.Parent.twop.Middle
+local twop2Part = script.Parent.Parent.Parent.Parent.twop2.Middle
+local twop3Part = script.Parent.Parent.Parent.Parent.twop3.Middle
+local twop4Part = script.Parent.Parent.Parent.Parent.twop4.Middle
+local twop5Part = script.Parent.Parent.Parent.Parent.twop5.Middle
+local twop6Part = script.Parent.Parent.Parent.Parent.twop6.Middle
+local StraightPart = script.Parent.Parent.Parent.Parent.Straight.Middle
+local Straight2Part = script.Parent.Parent.Parent.Parent.Straight2.Middle
+local Straight3Part = script.Parent.Parent.Parent.Parent.Straight3.Middle
+local ThreePart = script.Parent.Parent.Parent.Parent.Three.Middle
+local QuadPart = script.Parent.Parent.Parent.Parent.Quad.Middle
+
+-- Getting all the correct angle of each part
+
+local twop3Correct = 150
+local twop4Correct = -30
+local straightCorrect = -30
+local straight2Correct = 90
+local straight3Correct = 15
+local QuadCorrect = -30
+
+
+
+
+script.Parent.MouseClick:Connect(function()
+	part:PivotTo(part:GetPivot() * CFrame.Angles(math.rad(60), math.rad(0), math.rad(0))) 
+	if StraightPart.Orientation.Y == straightCorrect and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop3Part.Orientation.Y == twop3Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif StraightPart.Orientation.Y == straightCorrect and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- if neighbouring isnt oriented correctly
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif StraightPart.Orientation.Y ~= straightCorrect and twop3Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		twop3Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif StraightPart.Orientation.Y ~= straightCorrect then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	end
+end)
+
+-- STRAIGHT2SCRIPT
+local part = script.Parent.Parent.Parent
+
+
+-- Getting all the parts 
+local twopPart = script.Parent.Parent.Parent.Parent.twop.Middle
+local twop2Part = script.Parent.Parent.Parent.Parent.twop2.Middle
+local twop3Part = script.Parent.Parent.Parent.Parent.twop3.Middle
+local twop4Part = script.Parent.Parent.Parent.Parent.twop4.Middle
+local twop5Part = script.Parent.Parent.Parent.Parent.twop5.Middle
+local twop6Part = script.Parent.Parent.Parent.Parent.twop6.Middle
+local StraightPart = script.Parent.Parent.Parent.Parent.Straight.Middle
+local Straight2Part = script.Parent.Parent.Parent.Parent.Straight2.Middle
+local Straight3Part = script.Parent.Parent.Parent.Parent.Straight3.Middle
+local ThreePart = script.Parent.Parent.Parent.Parent.Three.Middle
+local QuadPart = script.Parent.Parent.Parent.Parent.Quad.Middle
+
+-- Getting all the correct angle of each part
+
+local twop3Correct = 150
+local twop4Correct = -30
+local straightCorrect = -30
+local straight2Correct = 90
+local straight3Correct = 15
+local QuadCorrect = -30
+
+
+script.Parent.MouseClick:Connect(function()
+	part:PivotTo(part:GetPivot() * CFrame.Angles(math.rad(60), math.rad(0), math.rad(0))) 
+	if Straight2Part.Orientation.Y == straight2Correct and QuadPart.Orientation.Y == QuadCorrect and Straight3Part.Orientation.Y == straight3Correct and twop4Part.Orientation.Y == twop4Correct and StraightPart.Orientation.Y == straightCorrect and twop3Part.Orientation.Y == twop3Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight2Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight2Part.Orientation.Y == straight2Correct and QuadPart.Orientation.Y == QuadCorrect and Straight3Part.Orientation.Y == straight3Correct and twop4Part.Orientation.Y == twop4Correct and StraightPart.Orientation.Y == straightCorrect then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight2Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight2Part.Orientation.Y == straight2Correct and QuadPart.Orientation.Y == QuadCorrect and Straight3Part.Orientation.Y == straight3Correct and twop4Part.Orientation.Y == twop4Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight2Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight2Part.Orientation.Y == straight2Correct and QuadPart.Orientation.Y == QuadCorrect and Straight3Part.Orientation.Y == straight3Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight2Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight2Part.Orientation.Y == straight2Correct and QuadPart.Orientation.Y == QuadCorrect then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		QuadPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight2Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight2Part.Orientation.Y == straight2Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		Straight2Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight2Part.Orientation.Y ~= straight2Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop3Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		Straight2Part.BrickColor = BrickColor.new("Really red")
+		twop3Part.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif Straight2Part.Orientation.Y ~= straight2Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		Straight2Part.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif Straight2Part.Orientation.Y ~= straight2Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		Straight2Part.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif Straight2Part.Orientation.Y ~= straight2Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		Straight2Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(Straight3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif Straight2Part.Orientation.Y ~= straight2Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		Straight2Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(QuadPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif Straight2Part.Orientation.Y ~= straight2Correct then -- disabling the colour on neighbouring objects when disconnecting
+		Straight2Part.BrickColor = BrickColor.new("Really red")
+		QuadPart.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	end
+end)
+
+-- STRAIGHT3SCRIPT
+local part = script.Parent.Parent.Parent
+
+-- Getting all the parts 
+local twopPart = script.Parent.Parent.Parent.Parent.twop.Middle
+local twop2Part = script.Parent.Parent.Parent.Parent.twop2.Middle
+local twop3Part = script.Parent.Parent.Parent.Parent.twop3.Middle
+local twop4Part = script.Parent.Parent.Parent.Parent.twop4.Middle
+local twop5Part = script.Parent.Parent.Parent.Parent.twop5.Middle
+local twop6Part = script.Parent.Parent.Parent.Parent.twop6.Middle
+local StraightPart = script.Parent.Parent.Parent.Parent.Straight.Middle
+local Straight2Part = script.Parent.Parent.Parent.Parent.Straight2.Middle
+local Straight3Part = script.Parent.Parent.Parent.Parent.Straight3.Middle
+local ThreePart = script.Parent.Parent.Parent.Parent.Three.Middle
+local QuadPart = script.Parent.Parent.Parent.Parent.Quad.Middle
+
+-- Getting all the correct angle of each part
+
+local twop3Correct = 150
+local twop4Correct = -30
+local straightCorrect = -30
+local straight2Correct = 90
+local straight3Correct = 15
+local QuadCorrect = -30
+
+
+script.Parent.MouseClick:Connect(function()
+	part:PivotTo(part:GetPivot() * CFrame.Angles(math.rad(60), math.rad(0), math.rad(0))) 
+	if Straight3Part.Orientation.Y == straight3Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.Orientation.Y == twop4Correct and StraightPart.Orientation.Y == straightCorrect and twop3Part.Orientation.Y == twop3Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight3Part.Orientation.Y == straight3Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.Orientation.Y == twop4Correct and StraightPart.Orientation.Y == straightCorrect then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight3Part.Orientation.Y == straight3Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") and twop4Part.Orientation.Y == twop4Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight3Part.Orientation.Y == straight3Correct and QuadPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		Straight3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif Straight3Part.Orientation.Y ~= straight3Correct and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") and twop3Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		twop3Part.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif Straight3Part.Orientation.Y ~= straight3Correct and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif Straight3Part.Orientation.Y ~= straight3Correct and twop4Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop4Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif Straight3Part.Orientation.Y ~= straight3Correct then -- disabling the colour on neighbouring objects when disconnecting
+		Straight3Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	end
+end)
+
+-- TWOP3SCRIPT
+local part = script.Parent.Parent.Parent
+
+-- Getting all the parts 
+local twopPart = script.Parent.Parent.Parent.Parent.twop.Middle
+local twop2Part = script.Parent.Parent.Parent.Parent.twop2.Middle
+local twop3Part = script.Parent.Parent.Parent.Parent.twop3.Middle
+local twop4Part = script.Parent.Parent.Parent.Parent.twop4.Middle
+local twop5Part = script.Parent.Parent.Parent.Parent.twop5.Middle
+local twop6Part = script.Parent.Parent.Parent.Parent.twop6.Middle
+local StraightPart = script.Parent.Parent.Parent.Parent.Straight.Middle
+local Straight2Part = script.Parent.Parent.Parent.Parent.Straight2.Middle
+local Straight3Part = script.Parent.Parent.Parent.Parent.Straight3.Middle
+local ThreePart = script.Parent.Parent.Parent.Parent.Three.Middle
+local QuadPart = script.Parent.Parent.Parent.Parent.Quad.Middle
+
+-- Getting all the correct angle of each part
+
+local twop3Correct = 150
+local twop4Correct = -30
+local straightCorrect = -30
+local straight2Correct = 90
+local straight3Correct = 15
+local QuadCorrect = -30
+
+
+
+script.Parent.MouseClick:Connect(function()
+	part:PivotTo(part:GetPivot() * CFrame.Angles(math.rad(60), math.rad(0), math.rad(0)))
+	if twop3Part.Orientation.Y == twop3Correct and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then
+		twop3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif twop3Part.Orientation.Y ~= twop3Correct then
+		twop3Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	end
+end)
+
+-- TWOP4SCRIPT
+local part = script.Parent.Parent.Parent
+
+
+-- Getting all the parts 
+local twopPart = script.Parent.Parent.Parent.Parent.twop.Middle
+local twop2Part = script.Parent.Parent.Parent.Parent.twop2.Middle
+local twop3Part = script.Parent.Parent.Parent.Parent.twop3.Middle
+local twop4Part = script.Parent.Parent.Parent.Parent.twop4.Middle
+local twop5Part = script.Parent.Parent.Parent.Parent.twop5.Middle
+local twop6Part = script.Parent.Parent.Parent.Parent.twop6.Middle
+local StraightPart = script.Parent.Parent.Parent.Parent.Straight.Middle
+local Straight2Part = script.Parent.Parent.Parent.Parent.Straight2.Middle
+local Straight3Part = script.Parent.Parent.Parent.Parent.Straight3.Middle
+local ThreePart = script.Parent.Parent.Parent.Parent.Three.Middle
+local QuadPart = script.Parent.Parent.Parent.Parent.Quad.Middle
+
+-- Getting all the correct angle of each part
+
+local twop3Correct = 150
+local twop4Correct = -30
+local straightCorrect = -30
+local straight2Correct = 90
+local straight3Correct = 15
+local QuadCorrect = -30
+
+
+script.Parent.MouseClick:Connect(function()
+	part:PivotTo(part:GetPivot() * CFrame.Angles(math.rad(60), math.rad(0), math.rad(0))) 
+	if twop4Part.Orientation.Y == twop4Correct and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.Orientation.Y == straightCorrect and twop3Part.Orientation.Y == twop3Correct then -- this line is insuring that if the neighbouring part is oriented correctly, it would automatically assing the colour to it.
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop3Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif twop4Part.Orientation.Y == twop4Correct and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.Orientation.Y == straightCorrect then -- if one of the neighbouring objects isnt oriented correctly
+		StraightPart.BrickColor = BrickColor.new("Yellow flip/flop")
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Yellow flip/flop")
+			end
+		end
+	elseif twop4Part.Orientation.Y == twop4Correct and Straight3Part.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		twop4Part.BrickColor = BrickColor.new("Yellow flip/flop")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif twop4Part.Orientation.Y ~= twop4Correct and twop3Part.BrickColor == BrickColor.new("Yellow flip/flop") and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		twop3Part.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(twop3Part.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif twop4Part.Orientation.Y ~= twop4Correct and StraightPart.BrickColor == BrickColor.new("Yellow flip/flop") then -- disabling the colour on neighbouring objects when disconnecting
+		StraightPart.BrickColor = BrickColor.new("Really red")
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+		for i, v in pairs(StraightPart.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	elseif twop4Part.Orientation.Y ~= twop4Correct then -- disabling the colour on neighbouring objects when disconnecting
+		twop4Part.BrickColor = BrickColor.new("Really red")
+		for i, v in pairs(script.Parent.Parent.Parent:GetChildren()) do
+			if v.Name == "Black" and v:IsA("Part") then
+				v.BrickColor = BrickColor.new("Really black")
+			end
+		end
+	end
+end)
