@@ -7,8 +7,10 @@ local code = third..5 -- creating the passcode like this prevents the number fou
 local press = game.Workspace.Passcode.Click.press
 local errorsound = game.Workspace.Passcode.Click.error
 local success = game.Workspace.Passcode.Click.success
+local passcodebrick = game.Workspace.Passcode
 
-game.Workspace.Passcode.Click.ClickDetector.MouseClick:Connect(function() -- when the player activated the proximity prompt by pressing 'e', it should run this function which reactivates the button on the GUI and makes it visible
+
+passcodebrick.Click.ClickDetector.MouseClick:Connect(function() -- when the player activated the proximity prompt by pressing 'e', it should run this function which reactivates the button on the GUI and makes it visible
 	print(1)
 	game.Players.LocalPlayer.PlayerGui.Passcode.Enabled = true
 end)
@@ -173,6 +175,9 @@ script.Parent.Enter.MouseButton1Click:Connect(function()
 			success:Play()
 			debounce2 = true
 			game.Players.LocalPlayer.PlayerGui.Passcode.Enabled = false
+			passcodebrick.Light.BrickColor = BrickColor.new("Sea green")
+			passcodebrick.Click.ClickDetector.MaxActivationDistance = 0
+			game.Workspace.PassDoor.Part.Attachment.ProximityPrompt.Enabled = true
 		elseif script.Parent.Number.Text ~= code then
 			errorsound:Play()
 			debounce2 = true
