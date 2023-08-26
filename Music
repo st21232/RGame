@@ -1,13 +1,33 @@
-local Sound1 = game.Workspace.Sound.Sound1
-local Sound2 = game.Workspace.Sound.Sound2
-
+local Sound1 = game.Workspace.Music.Simple
+local Sound2 = game.Workspace.Music.apartment
+local Sound3 = game.Workspace.Music.silver
+local Sound4 = game.Workspace.Music.chaotic
+local Sound5 = game.Workspace.Music.universe
+local Sound6 = game.Workspace.Music.Iknow
+local Sound7 = game.Workspace.Music.inside
+i = 1
 -- A sound loop which goes through all the music
 ---------------------------------------------
 while true do
 	Sound1:Play()
 	Sound1.Ended:Wait()
-	wait(5)
+	wait(2)
 	Sound2:Play()
 	Sound2.Ended:Wait()
-	wait(5)
+	wait(2)
+	Sound3:Play()
+	Sound3.Ended:Wait()
+	wait(2)
+	Sound4:Play()
+	Sound4.Ended:Wait()
+	wait(2)
+	Sound5:Play()
+	Sound5.Ended:Wait()
+	wait(2)
+	Sound6:Play()
+	Sound6.Ended:Wait()
+	wait(2)
+	Sound7:Play()
+	Sound7.Ended:Wait()
+	wait(2)
 end
