@@ -10,24 +10,100 @@ i = 1
 ---------------------------------------------
 while true do
 	Sound1:Play()
-	Sound1.Ended:Wait()
-	wait(2)
+	while i > 0 do
+		i = i - 0.1
+		Sound1.Volume = Sound1.Volume + 0.01
+		print(i)
+		wait(0.1)
+	end
+	wait(55)
+	while i < 1 do
+		i = i + 0.1
+		Sound1.Volume = Sound1.Volume - 0.01
+		print(i)
+		wait(0.1)
+	end
+	--
 	Sound2:Play()
-	Sound2.Ended:Wait()
-	wait(2)
+	while i > 0 do
+		i = i - 0.1
+		Sound2.Volume = Sound2.Volume + 0.01
+		wait(0.1)
+	end
+	wait(55)
+	while i < 1 do
+		i = i + 0.1
+		Sound2.Volume = Sound2.Volume - 0.01
+		wait(0.1)
+	end
+	--
 	Sound3:Play()
-	Sound3.Ended:Wait()
-	wait(2)
+	while i > 0 do
+		i = i - 0.1
+		Sound3.Volume = Sound3.Volume + 0.01
+		print(i)
+		wait(0.1)
+	end
+	wait(55)
+	while i < 1 do
+		i = i + 0.1
+		Sound3.Volume = Sound3.Volume - 0.01
+		wait(0.1)
+	end
+	--
 	Sound4:Play()
-	Sound4.Ended:Wait()
-	wait(2)
+	while i > 0 do
+		i = i - 0.1
+		Sound4.Volume = Sound4.Volume + 0.01
+		print(i)
+		wait(0.1)
+	end
+	wait(55)
+	while i < 1 do
+		i = i + 0.1
+		Sound4.Volume = Sound4.Volume - 0.01
+		wait(0.1)
+	end
+	--
 	Sound5:Play()
-	Sound5.Ended:Wait()
-	wait(2)
+	while i > 0 do
+		i = i - 0.1
+		Sound5.Volume = Sound5.Volume + 0.01
+		print(i)
+		wait(0.1)
+	end
+	wait(55)
+	while i < 1 do
+		i = i + 0.1
+		Sound5.Volume = Sound5.Volume - 0.01
+		wait(0.1)
+	end
+	--
 	Sound6:Play()
-	Sound6.Ended:Wait()
-	wait(2)
+	while i > 0 do
+		i = i - 0.1
+		Sound6.Volume = Sound6.Volume + 0.01
+		print(i)
+		wait(0.1)
+	end
+	wait(55)
+	while i < 1 do
+		i = i + 0.1
+		Sound6.Volume = Sound6.Volume - 0.01
+		wait(0.1)
+	end
+	--
 	Sound7:Play()
-	Sound7.Ended:Wait()
-	wait(2)
+	while i > 0 do
+		i = i - 0.1
+		Sound7.Volume = Sound7.Volume + 0.01
+		print(i)
+		wait(0.1)
+	end
+	wait(55)
+	while i < 1 do
+		i = i + 0.1
+		Sound7.Volume = Sound7.Volume - 0.01
+		wait(0.1)
+	end
 end
