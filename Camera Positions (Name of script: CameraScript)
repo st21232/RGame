@@ -1,0 +1,265 @@
+--this is the script used for the camera positions within the game. It will be updated regularly
+local player = game.Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local MirBut = game.Workspace.MirrorTele.Attachment.ProximityPrompt
+
+
+player.CharacterAdded:Wait()
+player.Character:WaitForChild("HumanoidRootPart")
+
+camera.CameraSubject = game.Workspace.Areas.Pos1
+camera.CameraType = Enum.CameraType.Attach
+camera.FieldOfView = 100
+
+camera.CFrame = CFrame.new(game.Workspace.Areas.Pos1.Position)
+camera.CFrame = camera.CFrame * CFrame.Angles(0, math.rad(-90), 0)
+camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-40), 0, 0)
+
+for i, v in pairs(game.Workspace.Areas:GetChildren()) do
+	if v:IsA("Part") then
+		v.Touched:Connect(function(plr)
+			if plr.Parent:FindFirstChild("Humanoid") then -- This detects if the part touched is a human or not.
+				if v.Name == "Area1" then
+					camera.FieldOfView = 85
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(0, 0, 0)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), 0, 0)
+					print(plr)
+				elseif v.Name == "Area2" then
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(0, math.rad(45), 0)
+				elseif v.Name == "Area3" then
+					camera.FieldOfView = 85
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(45), 0)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-25), math.rad(0), 0)
+					print(plr)
+				elseif v.Name == "Area4" then
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(-25), 0)
+				elseif v.Name == "Area5" then
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(90), 0)
+				elseif v.Name == "Area6" then
+					camera.FieldOfView = 120
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(0), 0)
+				elseif v.Name == "Area7" then
+					camera.FieldOfView = 70
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(0), 0)
+				elseif v.Name == "Area8" then
+					camera.FieldOfView = 70
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(10), math.rad(0), 0)
+				elseif v.Name == "Area9" then
+					camera.FieldOfView = 70
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(-80), 0)
+				elseif v.Name == "Area10" then
+					camera.FieldOfView = 70
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(-50), 0) 
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-25), math.rad(0), 0)
+					script.Rain:Stop() -- stops the rain sound
+				elseif v.Name == "Area11" then
+					camera.FieldOfView = 60
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(40), 0) 
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-30), math.rad(0), 0)
+					script.Rain:Play() -- starts the rain sound
+				elseif v.Name == "Area12" then
+					camera.FieldOfView = 70
+					camera.CFrame = CFrame.new(v.part.Position)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(-80), 0)
+					camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-15), math.rad(0), 0)
+					script.Rain:Stop()
+				end
+				
+			end
+		end)
+	end
+end
+
+local passcodebroke = game.Workspace.PasscodeBroken
+passcodebroke.Click.ClickDetector.MouseClick:Connect(function() -- This is the script to teleport the player into the maze
+	game.Workspace.Mirror.ElectricShock:Play()
+	passcodebroke.Click.ClickDetector.MaxActivationDistance = 0
+	for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do -- assigning the lightning particle to the player
+		if v:IsA("Part") and v.Name == "Torso" then
+			local Lightning = game.Players.LocalPlayer.PlayerGui.MirrorGUI.Lightning:Clone()
+			local LightLightning = game.Players.LocalPlayer.PlayerGui.MirrorGUI.LightLightning:Clone()
+			Lightning.Parent = v
+			LightLightning.Parent = v
+			v.Lightning:Emit(15)
+			v.Transparency = 1
+		elseif v:IsA("Part") then
+			v.Transparency = 1
+		elseif v:IsA("Accessory") then
+			v.Handle.Transparency = 1
+		end
+	end
+	wait(1)
+	camera.FieldOfView = 85
+	camera.CFrame = CFrame.new(game.Workspace.Areas.Special2.Position)
+	camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-89), math.rad(0), 0) -- assigning the camera to the new position
+	for i, f in pairs(game.Players.LocalPlayer.Character:GetChildren()) do -- assigning the lightning particle to the player
+		if f:IsA("Part") then
+			f.Material = Enum.Material.Neon
+			f.CFrame = game.Workspace.Maze.Tele.CFrame -- assigning the postioin of the player to a part in the maze
+			f.Transparency = 0
+		elseif f:IsA("Accessory") then
+			f.Handle.Transparency = 0
+		end
+	end
+end)
+
+local reddebounce = false
+
+game.Workspace.Maze.RedProx.Touched:Connect(function() -- this is for when the player tries to exit the maze
+	if reddebounce == false then
+		reddebounce = true
+		for i, f in pairs(game.Players.LocalPlayer.Character:GetChildren()) do -- assigning the lightning particle to the player
+			if f:IsA("Part") then
+				f.Material = Enum.Material.Plastic
+				f.CFrame = game.Workspace.TELEGLITCH.CFrame -- assigning the postioin of the player to a part in the maze
+			end
+		end
+		camera.FieldOfView = 70
+		camera.CFrame = CFrame.new(game.Workspace.Areas.Area10.part.Position)
+		camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(-50), 0) -- assigning the camera to the new position
+		camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-25), math.rad(0), 0)
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do -- Deleting the lightning particle and making player visible again
+			if v:IsA("Part") and v.Name == "Torso" then
+				game.Workspace.Mirror.ElectricShock:Play()
+				v.Lightning:Emit(15)
+				wait(1)
+				v.Lightning:Destroy()
+				v.LightLightning:Destroy()
+				v.Transparency = 0
+			elseif v:IsA("Part")  and v.Name ~= "HumanoidRootPart" then
+				v.Transparency = 0
+			elseif v:IsA("Accessory") then
+				v.Handle.Transparency = 0
+			end
+		end
+		local i = 1
+		while i > 0 do -- using a loop to smoothly transition text on the screen
+			i = i - 0.1
+			game.Players.LocalPlayer.PlayerGui.Where.TextLabel.TextTransparency = game.Players.LocalPlayer.PlayerGui.Where.TextLabel.TextTransparency - 0.1
+			wait(0.1)
+		end
+		wait(1)
+		while i < 1 do
+			i = i + 0.1
+			game.Players.LocalPlayer.PlayerGui.Where.TextLabel.TextTransparency = game.Players.LocalPlayer.PlayerGui.Where.TextLabel.TextTransparency + 0.1
+			wait(0.1)
+		end
+	end
+end)
+
+
+local GenProx = game.Workspace.GeneratorPuz.Attach.Attachment.ProximityPrompt -- this is for when the proximity prompt on the generator is activated
+GenProx.Triggered:Connect(function(plr) -- make the button appear when entering the generator
+	game.Workspace.Mirror.ElectricShock:Play()
+	GenProx.Enabled = false
+	for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do -- assigning the lightning particle to the player and making player invisible
+		if v:IsA("Part") and v.Name == "Torso" then
+			local Lightning = game.Players.LocalPlayer.PlayerGui.MirrorGUI.Lightning:Clone()
+			Lightning.Parent = v
+			v.Lightning:Emit(15)
+			v.Transparency = 1
+		elseif v:IsA("Part") then
+			v.Transparency = 1
+		elseif v:IsA("Accessory") then
+			v.Handle.Transparency = 1
+		end
+	end
+	wait(2)
+	local buttongen = plr.PlayerGui.Exit
+	buttongen.Enabled = true
+	camera.FieldOfView = 90
+	camera.CFrame = CFrame.new(game.Workspace.Areas.Special3.Position)
+	camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-90), math.rad(0), 0) -- changing the camera position
+end)
+
+local GenBut = player.PlayerGui.Exit.TextButton
+GenBut.MouseButton1Click:Connect(function() -- when the exit button is pressed
+	if game.Workspace.Generator.twop.Black.Material == Enum.Material.Neon then -- checks to see if the puzzle is completed
+		camera.FieldOfView = 70
+		camera.CFrame = CFrame.new(game.Workspace.Areas.Area12.part.Position)
+		camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(-80), 0) -- assigning the camera to the new position
+		camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-15), math.rad(0), 0)
+		GenBut.Parent.Enabled = false
+		for i, v in pairs(player.Character:GetChildren()) do -- Deleting the lightning particle and making player visible again
+			if v:IsA("Part") and v.Name == "Torso" then
+				game.Workspace.Mirror.ElectricShock:Play()
+				v.Lightning:Emit(15)
+				wait(1)
+				v.Lightning:Destroy()
+				v.Transparency = 0
+			elseif v:IsA("Part")  and v.Name ~= "HumanoidRootPart" then
+				v.Transparency = 0
+			elseif v:IsA("Accessory") then
+				v.Handle.Transparency = 0 
+			end
+		end
+	else
+		game.Workspace.Music.No:Play() -- else play this sound effect
+	end
+end)
+
+
+MirBut.Triggered:Connect(function(plr) -- make the button appear when entering the mirror system
+	game.Workspace.Mirror.ElectricShock:Play()
+	MirBut.Enabled = false
+	for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do -- assigning the lightning particle to the player and making player invisible
+		if v:IsA("Part") and v.Name == "Torso" then
+			local Lightning = game.Players.LocalPlayer.PlayerGui.MirrorGUI.Lightning:Clone()
+			Lightning.Parent = v
+			v.Lightning:Emit(15)
+			v.Transparency = 1
+		elseif v:IsA("Part") then
+			v.Transparency = 1
+		elseif v:IsA("Accessory") then
+			v.Handle.Transparency = 1
+		end
+	end
+	wait(2)
+	local button = plr.PlayerGui.MirrorGUI.TextButton
+	button.BackgroundTransparency = 0
+	button.TextTransparency = 0
+	button.Active = true
+	camera.FieldOfView = 90
+	camera.CFrame = CFrame.new(game.Workspace.Areas.Special1.Position)
+	camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-90), math.rad(0), 0)
+end)
+
+local button = player.PlayerGui.MirrorGUI.TextButton -- makes the mirror button functional
+button.MouseButton1Click:Connect(function()
+	if game.Workspace.Mirror.TouchBlock.BrickColor == BrickColor.new("Bright red") then
+		game.ReplicatedStorage.MirrorButton:FireServer()
+	elseif game.Workspace.Mirror.TouchBlock.BrickColor == BrickColor.new("Sea green") then
+		camera.FieldOfView = 85
+		camera.CFrame = CFrame.new(game.Workspace.Areas.Area3.part.Position)
+		camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(0), math.rad(45), 0)
+		camera.CFrame = camera.CFrame * CFrame.Angles(math.rad(-25), math.rad(0), 0)
+		button.BackgroundTransparency = 1
+		button.TextTransparency = 1
+		button.Active = false
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do -- Deleting the lightning particle and making player visible again
+			if v:IsA("Part") and v.Name == "Torso" then
+				game.Workspace.Mirror.ElectricShock:Play()
+				v.Lightning:Emit(15)
+				wait(1)
+				v.Lightning:Destroy()
+				v.Transparency = 0
+			elseif v:IsA("Part")  and v.Name ~= "HumanoidRootPart" then
+				v.Transparency = 0
+			elseif v:IsA("Accessory") then
+				v.Handle.Transparency = 0
+			end
+		end
+	end
+end)
+
